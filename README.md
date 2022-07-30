@@ -9,6 +9,13 @@ A database is described as an organized way of collection of DATA. It is the col
 ```SQL
 CREATEDATABASE DB_Name
 ```
+
+### What is SQL server?
+
+SQL server has stayed on top as one of the most popular database management products ever since its first release in 1989 by Microsoft Corporation. The product is used across industries to store and process large volumes of data. It was primarily built to store and process data that is built on a relational model of data.
+SQL Servers are widely used for data analysis and also scaling up of data. SQL Server can be used in conjunction with Big Data tools such as Hadoop.
+SQL Servers can be used to process data from various data sources such as Excel, Table, .Net Framework application, etc.
+
 ### What is Relational Database Management System (RDMBS)?
 
 RDBMS store data into a collection of tables, which is related by common fields between the columns of the table. It also provides relational operators to manipulate the data stored into the tables.
@@ -166,30 +173,174 @@ Functions are methods used to perform data operations. SQL has many in-built fun
 SQL functions are categorized into the following two categories: Aggregate Functions and Scalar Functions.
 * **Aggregate SQL Functions**
 The Aggregate Functions in SQL perform calculations on a group of values and then return a single value. Following are a few of the most commonly used Aggregate Functions:
+
 ```SQL
-| **Function**      | **Descreption**      |
-| ------------- | ------------- |
-| SUM()          | The SUM() function returns the total sum of a group of values.         |
-| COUNT()           | The COUNT() function returns the number of rows in a database table.         |
-| AVG()           | The AVG() function calculates the average of a set of values.         |
-| MIN()           | The MIN() function returns the lowest value in a set of values.         |
-| MAX()           | The MAX() function returns the highest value (maximum) in a set of values.         |
-| FIRST()           | Test2         |
-| LAST()           | Test2         |
+SUM()            The SUM() function returns the total sum of a group of values.         
+COUNT()          The COUNT() function returns the number of rows in a database table.         
+AVG()            The AVG() function calculates the average of a set of values.         
+MIN()            The MIN() function returns the lowest value in a set of values.         
+MAX()            The MAX() function returns the highest value (maximum) in a set of values.         
 ```
 
 * **Scalar SQL Functions**
 The Scalar Functions in SQL are used to return a single value from the given input value. Following are a few of the most commonly used Scalar Functions:
 
 ```SQL
-| **Function**      | **Descreption**      |
-| ------------- | ------------- |
-| UCASE()           | The UCASE() or upper case function will change the case of the string to upper case characters.         |
-| LCASE()           | The LCASE() or lower case function will change the case of the string to lower case characters.         |
-| MID()           | The MID() function is used to extract substrings from the table's column, which contain values of string type.         |
-| LENGTH()           | The LENGTH() function returns the length of the string in the column.         |
-| ROUND()           | The ROUND () function is used to round a numeric column to the number of decimals specified.         |
-| NOW()           | NOW() function returns the current system's date and time.         |
-| FORMAT()           | The FORMAT () function is used to format how a column is to be displayed.         |
+UCASE()           The UCASE() or upper case function will change the case of the string to upper case characters.         
+LCASE()           The LCASE() or lower case function will change the case of the string to lower case characters.         
+MID()             The MID() function is used to extract substrings from the table's column, which contain values of string type.         
+LENGTH()          The LENGTH() function returns the length of the string in the column.         
+ROUND()           The ROUND () function is used to round a numeric column to the number of decimals specified.         
+NOW()             NOW() function returns the current system's date and time.         
+FORMAT()          The FORMAT () function is used to format how a column is to be displayed.      
 ```
+
+### What is alias in SQL?
+
+SQL aliases are used to give a table, or a column in a table, a temporary name. Aliases are often used to make column names more readable. An alias only exists for the duration of that query. An alias is created with the AS keyword.
+
+### What is the difference between OLTP and OLAP?
+
+* **OLAP**
+Online Analytical Processing, a category of software tools which provide analysis of data for business decisions. OLAP systems allow users to analyze database information from multiple database systems at one time.
+The primary objective is data analysis and not data processing.
+
+* **OLTP**
+Online transaction processing shortly known as OLTP supports transaction-oriented applications in a 3- tier architecture. OLTP administers day to day transaction of an organization.
+The primary objective is data processing and not data analysis. Unlike OLAP systems, the goal of OLTP systems is serving real-time transactions.
+
+### How can we create tables in SQL?
+
+The command to create a table in SQL is extremely simple:
+We will start off by giving the keywords, CREATE TABLE, then we will give the name of the table. After that in braces, we will list out all the columns along with their data types.
+For example, if we want to create a simple employee table:
+
+```SQL
+CREATE TABLE employee (
+  name varchar(25), 
+  age int,
+  gender varchar(25),
+);
+```
+
+### How can we change a table name in SQL?
+
+We can start off by giving the keywords ALTER TABLE, then we will follow it up by giving the original name of the table, after that, we will give in the keywords RENAME TO and finally, we will give the new table name.
+For example, if we want to change the “employee” table to “emp”, this will be the command:
+
+```SQL
+ALTER TABLE employee RENAME TO emp;
+```
+
+### What is ETL in SQL?
+
+ETL stands for Extract, Transform and Load. It is a three step process, where we would have to start off by extracting the data from sources. Once we collate the data from different sources, we have our raw data. This raw data has to be transformed into a tidy format, which will come in the second phase. Finally, we would have to load this tidy data into tools which would help us to find insights.
+
+### What is the difference between CHAR and VARCHAR2 data types in SQL server?
+
+When stored in a database, varchar2 uses only the allocated space. E.g. if you have a varchar2(1999) and put 50 bytes in the table, it will use 52 bytes.
+But when stored in a database, char always uses the maximum length and is blank-padded. E.g. if you have char(1999) and put 50 bytes in the table, it will consume 2000 bytes.
+
+### What is cross join?
+
+Cross join is a Cartesian product where number of rows in the first table multiplied by number of rows in the second table.
+
+### What are user-defined functions?
+
+User-defined functions are the functions written to use that logic whenever required. It is not necessary to write the same logic several times. Instead, function can be called or executed whenever needed.
+
+### What is a CLAUSE?
+
+SQL clause is defined to limit the result set by providing condition to the query. This usually filters some rows from the whole set of records.
+> Query that has WHERE condition.
+
+### Explain UNION, MINUS and INTERACT commands?
+
+* **UNION** operator is used to combine the results of two tables, and it eliminates duplicate rows from the tables.
+
+* **MINUS** operator is used to return rows from the first query but not from the second query. Matching records of first and second query and other rows from the first query will be displayed as a result set.
+
+* **INTERSECT** operator is used to return rows returned by both the queries.
+
+### What TCP/IP port does SQL Server run?
+
+By default, SQL Server runs on port 1433.
+
+### Which operator is used in query for pattern matching?
+LIKE operator is used for pattern matching, and it can be used with:
+> ```%``` –> Matches zero or more characters. 
+> ```_```(Underscore) –> Matching exactly one character.
+
+### How can we select unique records from a Table?
+
+Select unique records from a table by using ```DISTINCT``` keyword.
+
+### List and explain each of the ACID properties that collectively guarantee that database transactions are processed reliably.
+
+ACID Properties are used for maintaining the integrity of database during transaction processing. ACID in DBMS stands for Atomicity, Consistency, Isolation, and Durability.
+* **Atomicity:** A transaction is a single unit of operation. You either execute it entirely or do not execute it at all. There cannot be partial execution.
+
+* **Consistency:** Once the transaction is executed, it should move from one consistent state to another. 
+
+* **Isolation:** Transaction should be executed in isolation from other transactions. During concurrent transaction execution, intermediate transaction results from simultaneously executed transactions should not be made available to each other.
+
+* **Durability:** After successful completion of a transaction, the changes in the database should persist, even in the case of system failures.
+
+### What is the main difference in the BETWEEN and IN condition operators?
+
+BETWEEN operator is used to display rows based on a range of values in a row whereas the IN condition operator is used to check for values contained in a specific set of values.
+
+```
+SELECT * FROM Students where ROLL_NO BETWEEN 10 AND 50;
+```
+```
+SELECT * FROM students where ROLL_NO IN (5,15,25);
+```
+
+### What is candidate key?
+
+A candidate key is a subset of a super key set where the key which contains no redundant attribute is none other than a Candidate Key. In order to select the candidate keys from the set of super key, we need to look at the super key set.
+
+### What is the difference between JOIN and UNION?
+* **JOIN**
+JOIN in SQL is used to combine data from many tables based on a matched condition between them. The data combined using JOIN statement results into new columns.
+* **UNION**
+UNION in SQL is used to combine the result-set of two or more SELECT statements. The data combined using UNION statement results into new distinct rows.
+
+### What is SQL injection? When does SQL injection occur?
+
+SQL Injection is a type of database attack technique where malicious SQL statements are inserted into an entry field of database in a way that once it is executed, the database is exposed to an attacker for the attack. This technique is usually used for attacking data-driven applications to have access to sensitive data and perform administrative tasks on databases.
+
+### What is ENUM?
+
+An ENUM is a string object with a value chosen from a list of permitted values that are enumerated explicitly in the column specification at table creation time.
+
+### What is the difference between the CEIL, FLOOR and ROUND functions?
+
+* **ROUND** - Rounds a positive or negative value to a specific length.
+
+* **CEILING** - Evaluates the value on the right side of the decimal and returns the smallest integer greater than, or equal to, the specified numeric expression.
+
+* **FLOOR** - Evaluates the value on the right side of the decimal and returns the largest integer less than or equal to the specified numeric expression.
+
+### What is the RAND() function?
+
+The RAND() function will return a value between 0 (inclusive) and 1 (exclusive). The RAND() function will return a completely random number if no seed is provided, and a repeatable sequence of random numbers if a seed value is used.
+
+### What is the difference between ```LOCALTIMESTAMP``` and ```CURRENT_TIMESTAMP```?
+
+```LOCALTIMESTAMP``` returns only time stamp value where as the function ```CURRENT_TIMESTAMP``` will return time stamp with Time Zone value.
+
+### How to use LIKE in SQL?
+
+The LIKE operator checks if an attribute value matches a given string pattern. Here is an example of LIKE operator:
+
+```SELECT * FROM employees WHERE first_name like ‘Bunker’;```
+
+With this command, we will be able to extract all the records where the first name is like “Bunker”.
+
+### What is Live Lock?
+
+A live lock is one wherein a request for an exclusive lock is repeatedly denied because a series of overlapping shared locks keep interfering.
+
 
