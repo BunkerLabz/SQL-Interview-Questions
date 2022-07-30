@@ -69,7 +69,7 @@ Some commands that come under DML:
 
 DCL commands are used to grant and take back authority from any database user.
 Some commands that come under DCL:
-> Grant, Revoke
+> GRANT, REVOKE
 
 ### What is Transaction Control Language (TCL)?
 
@@ -135,7 +135,7 @@ A subquery is a query within another query. The outer query is called as main qu
 There are two types of sub-queries: Correlated and Non-Correlated.
 * **Correlated Subquery:** A correlated subquery cannot be considered as an independent query.
 
-* * **Non-Correlated Subquery:** A Non-Correlated sub query can be considered as independent query and the output of subquery are substituted in the main query.
+* **Non-Correlated Subquery:** A Non-Correlated sub query can be considered as independent query and the output of subquery are substituted in the main query.
 
 ### Differentiate between the DELETE and TRUNCATE commands.
 
